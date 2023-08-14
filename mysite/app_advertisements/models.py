@@ -35,6 +35,18 @@ class Advertisement(models.Model):
             )
         return self.updated_at.strftime("%d.%m.%Y - %H:%M ")
     
+    @admin.display(description="Файлы")
+    def image_display(self):
+        if self.image:
+            return format_html(
+                "<img src='{}' width = '150px' height = '100px'>", self.image.url
+            )
+        return None
+        # return format_html(
+        #     "<img src='{}'>'", image
+        # )
+
+    
     class Meta:
         db_table = "advertisements"
 
