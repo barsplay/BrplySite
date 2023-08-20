@@ -11,10 +11,10 @@ def index(request):
     context = {
         "advertisements": advertisement
     }
-    return render(request, "index.html", context)
+    return render(request, "app_advertisements/index.html", context)
 
 def top_sellers(request):
-    return render(request, "top-sellers.html")
+    return render(request, "app_advertisements/top-sellers.html")
 
 
 def advertisement_post(request:WSGIRequest):
@@ -34,13 +34,4 @@ def advertisement_post(request:WSGIRequest):
     context = {
         'form':form
     }
-    return render(request, "advertisement-post.html", context)
-
-def login(request):
-    return render(request, "login.html")
-
-def register(request):
-    return render(request, "register.html")
-
-def profile(request):
-    return render(request, "profile.html")
+    return render(request, "app_advertisements/advertisement-post.html", context)

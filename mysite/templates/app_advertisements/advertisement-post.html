@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}Добавление объявления{% endblock %}
+
+{% block content %}
+  <div class="row">
+    <div class="col" style="margin: 50px;">
+      <div class="display-2">
+        <span class="badge bg-primary">Сообщите миру об этом в этой форме</span>
+      </div>
+    </div>
+  </div>
+  <div class="container">
+    <!-- enctype="multipart/form-data" для отправки картинок-->
+    <form method="post" enctype="multipart/form-data">
+      <!-- .as_table  .as_ul-->
+      {% csrf_token %}
+      {{form.as_p}}
+      <div class="row mb-3 offset-sm-5">
+        <div class="col">
+          <button type="submit" class="btn btn-success">Принять</button>
+        </div>
+      </div>
+    </form>
+  </div>
+{% endblock %}
